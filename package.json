@@ -1,0 +1,70 @@
+{
+  "name": "br-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "https://nataliakif.github.io/BR-frontend/",
+  "dependencies": {
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
+    "@mui/lab": "^5.0.0-alpha.101",
+    "@mui/material": "^5.10.7",
+    "@reduxjs/toolkit": "^1.8.5",
+    "@tanstack/react-table": "^8.5.13",
+    "@testing-library/jest-dom": "^5.16.3",
+    "@testing-library/react": "^12.1.4",
+    "@testing-library/user-event": "^13.5.0",
+    "chart": "^0.1.2",
+    "chart.js": "^3.9.1",
+    "formik": "^2.2.9",
+    "i18next": "^21.9.2",
+    "i18next-browser-languagedetector": "^6.1.5",
+    "i18next-http-backend": "^1.4.4",
+    "mixins-sass": "^1.1.3",
+    "normalize.css": "^8.0.1",
+    "react": "^18.1.0",
+    "react-chartjs-2": "^4.3.1",
+    "react-datepicker": "^4.8.0",
+    "react-dom": "^18.1.0",
+    "react-ellipsis-text": "^1.2.1",
+    "react-i18next": "^11.18.6",
+    "react-icons": "^4.4.0",
+    "react-media": "^1.10.0",
+    "react-redux": "^8.0.4",
+    "react-router-dom": "^6.4.1",
+    "react-scripts": "5.0.1",
+    "react-toastify": "^9.0.8",
+    "redux-persist": "^6.0.0",
+    "sass": "^1.55.0",
+    "stylesheet": "^0.9.1",
+    "toastify": "^2.0.1",
+    "web-vitals": "^2.1.3",
+    "yup": "^0.32.11"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint:js": "eslint src/**/*.{js,jsx}",
+    "predeploy": "npm run build",
+    "deploy": "netlify deploy -p"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

@@ -1,0 +1,74 @@
+.tableBox {
+  margin-top: 20px;
+}
+
+.titleBookWrapper {
+  display: flex;
+  height: 60px;
+}
+
+.titleBook {
+  display: flex;
+  align-items: center;
+  font-style: normal;
+  padding-left: 9px;
+  padding-right: 74px;
+}
+
+.checkBoxWrapper {
+  display: flex;
+  align-items: center;
+  align-content: center;
+}
+
+.icon {
+  fill: var(--library-color);
+}
+
+.table {
+  border-collapse: collapse;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.21;
+  border-top: 1px solid #e0e5eb;
+  border-bottom: 1px solid #e0e5eb;
+
+  table-layout: fixed;
+}
+
+.tableTitleCell {
+  text-align: start;
+  color: var(--secondary-text-color);
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.tableTBody > tr {
+  border-top: 1px solid #e0e5eb;
+}
+
+.styleCheckBox {
+  width: 1%;
+}
+
+.styleTitleBook {
+  width: 40%;
+}
+
+.styleAuthor {
+  width: 34%;
+}
+
+.styleColums {
+  width: 13%;
+}
+@media screen and (min-width: 1280px) {
+  .tableTBody {
+    overflow-x: hidden;
+    max-height: 213px;
+  }
+  .tableBox {
+    width: 923px;
+    grid-column: 1;
+  }
+}
