@@ -1,8 +1,3 @@
-.sectionStatistic {
-  width: 280px;
-  margin: 0 auto;
-}
-
 .myGoals {
   padding: 20px;
 }
@@ -14,30 +9,35 @@
 }
 
 @media screen and (min-width: 480px) {
-  .sectionStatistic {
+  .sectionStatistic,
+  .sectionStatisticTraining {
     width: 480px;
   }
 }
 
 @media screen and (min-width: 768px) {
   .sectionStatistic {
-    width: 768px;
-    padding-left: 32px;
-    padding-right: 32px;
+    width: 704px;
+  }
+  .sectionStatisticTraining {
+    width: 704px;
   }
   .statisticsWrapper {
     display: flex;
+    width: 704px;
     flex-direction: column;
     margin-bottom: 32px;
-    /* margin-top: 28px; */
   }
 }
 
 @media screen and (min-width: 1280px) {
   .sectionStatistic {
     width: 1280px;
-    padding-left: 16px;
-    padding-right: 16px;
+  }
+
+  .sectionStatisticTraining {
+    width: 1280px;
+    margin-bottom: 40px;
   }
   .statisticsWrapper {
     display: grid;
@@ -55,5 +55,11 @@
     flex-direction: column;
     margin-right: 32px;
     width: 928px;
+  }
+  .sectionMuGoals {
+    width: 288px;
+    height: 329px;
+    grid-row-start: 1;
+    grid-row-end: 3;
   }
 }

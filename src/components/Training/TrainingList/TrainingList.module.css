@@ -41,6 +41,9 @@
 .plug {
   display: none;
 }
+#delete_button {
+  cursor: pointer;
+}
 
 @media screen and (min-width: 768px) {
   .listHeader {
@@ -79,6 +82,7 @@
 @media screen and (min-width: 1280px) {
   .trainingWrapper {
     margin-top: 23px;
+    border-bottom: 1px solid var(--icon-color);
   }
   .header {
     grid-template-columns: 345px 340px 100px 100px;

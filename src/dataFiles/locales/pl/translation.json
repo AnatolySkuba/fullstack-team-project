@@ -42,6 +42,7 @@
     "confirmPassword": "Potwierdź hasło jest wymagane",
 
     "bookTitle": "Tytuł książki jest krótki.",
+    "latinLetters": "Używaj tylko liter łacińskich.",
     "titleMax": "Tytuł jest za długi.",
     "titleSpace": "Nie można zaczynać od spacji i myślnika",
     "enterTitle": "Wprowadź tytuł książki.",
@@ -59,6 +60,7 @@
     "pagesMin": "Liczba stron jest większa niż 1.",
     "pagesMax": "Liczba stron jest mniejsza niż 4.",
     "pagesFill": "Wypełnij liczbę stron.",
+    "yearFill": "Wypełnij datę.",
     "pagesError": "Wprowadź liczbę stron od 1 do 4.",
     "pagesMin1": "Nie może być mniej niż 1",
     "pagesMore": "Więcej niż strony w szkoleniu",
@@ -81,13 +83,14 @@
     "rating": "Ocena",
     "resume": "Wznów",
     "choose": "Wybierz ocenę książki",
-    "save": "Zapisz"
+    "save": "Zapisz",
+    "myTraining": "Mój trening"
   },
 
   "training": {
     "myGoals": "Moje cele",
     "books": "Ilość książek",
-    "days": "Ilość dni",
+    "days": "Liczba dni",
     "booksLeft": "Pozostały książki",
     "myTraining": "Moje szkolenie",
     "startTraining": "Rozpocznij szkolenie",
@@ -116,7 +119,10 @@
   },
 
   "toast": {
-    "regSuccess": "Rejestracja powiodła się"
+    "regSuccess": "Rejestracja powiodła się",
+    "addBook": "Twoja książka ",
+    "addBookSuccess": " został pomyślnie dodany",
+    "bookWarning": "Już dodałeś książkę o tytule - "
   },
 
   "modal": {

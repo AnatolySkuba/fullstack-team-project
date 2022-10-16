@@ -1,14 +1,11 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { BsArrowLeft } from 'react-icons/bs';
 import { useFetchBooksQuery } from 'redux/books/booksApi';
 import { useCreateTrainingMutation } from 'redux/training/trainingApi';
 import { useFetchTrainingQuery } from 'redux/training/trainingApi';
 import { useEditBookMutation } from 'redux/books/booksApi';
-import getTrainingDaysAmount from 'helpers/getTrainingDaysAmount';
-import getTotalPageAmount from 'helpers/getTotalPageAmount';
-
-import s from './TrainingView.module.css';
 import Container from 'components/Container';
 import MyGoals from 'components/MyGoals';
 import TrainingForm from 'components/Training/TrainingForm/TrainingForm';
@@ -18,7 +15,10 @@ import Progress from 'components/Progress/Progress';
 import Button from 'components/Button/Button';
 import TrainingMobileList from '../../components/Training/TrainingList/TrainingMobileList/TrainingMobileList';
 import useIsMobile from '../../helpers/useIsMobile';
-import { BsArrowLeft } from 'react-icons/bs';
+import getTrainingDaysAmount from 'helpers/getTrainingDaysAmount';
+import getTotalPageAmount from 'helpers/getTotalPageAmount';
+
+import s from './TrainingView.module.css';
 
 const TrainingView = () => {
   const [startDate, setStartDate] = useState(null);
@@ -106,74 +106,73 @@ const TrainingView = () => {
   return isFetchingTraining ? (
     <Progress />
   ) : (
-    <>
-      <Container>
-        <div className={s.training}>
-          {!showElement && (
-            <MyGoals
-              bookAmount={selectedBooks.length}
-              daysAmount={trainingDaysAmount}
+    <Container>
+      <div className={s.training}>
+        {!showElement && (
+          <MyGoals
+            bookAmount={selectedBooks.length}
+            daysAmount={trainingDaysAmount}
+          />
+        )}
+        <div className={s.wrapperContainer}>
+          {(!isMobile || showElement) && (
+            <TrainingForm
+              goingToReadBooks={goingToReadBooks.filter(
+                book => !selectedBooks.map(book => book._id).includes(book._id)
+              )}
+              onStartDateChange={setStartDate}
+              onFinishDateChange={setFinishDate}
+              onBtnAddClick={selectBook}
             />
           )}
-          <div className={s.wrapperContainer}>
-            {(!isMobile || showElement) && (
-              <TrainingForm
-                goingToReadBooks={goingToReadBooks.filter(
-                  book =>
-                    !selectedBooks.map(book => book._id).includes(book._id)
-                )}
-                onStartDateChange={setStartDate}
-                onFinishDateChange={setFinishDate}
-                onBtnAddClick={selectBook}
-              />
-            )}
-            {!showElement && !isMobile && (
-              <TrainingList
-                trainingBooks={selectedBooks}
-                deleteBookFromList={onSelectedBookDelete}
-              />
-            )}
-            {isMobile && !showElement && (
-              <TrainingMobileList
-                trainingBooks={selectedBooks}
-                deleteBookFromList={onSelectedBookDelete}
-              />
-            )}
+          {!showElement && !isMobile && (
+            <TrainingList
+              trainingBooks={selectedBooks}
+              deleteBookFromList={onSelectedBookDelete}
+            />
+          )}
+          {isMobile && !showElement && (
+            <TrainingMobileList
+              trainingBooks={selectedBooks}
+              deleteBookFromList={onSelectedBookDelete}
+            />
+          )}
 
-            {showElement && (
-              <BsArrowLeft
-                className={s.arrowButton}
-                onClick={() => setShowElement(false)}
+          {showElement && (
+            <BsArrowLeft
+              className={s.arrowButton}
+              onClick={() => setShowElement(false)}
+            />
+          )}
+          {showStButton && !showElement && (
+            <div className={s.buttonWrapper}>
+              <Button
+                id="startTraining"
+                className="main"
+                text={t('training.startTraining')}
+                onClick={onStartClick}
+                onEnded={isLoading}
               />
-            )}
-            {showStButton && !showElement && (
-              <div className={s.buttonWrapper}>
-                <Button
-                  id="startTraining"
-                  className="main"
-                  text={t('training.startTraining')}
-                  onClick={onStartClick}
-                  onEnded={isLoading}
-                />
-              </div>
-            )}
-          </div>
+            </div>
+          )}
         </div>
+      </div>
 
+      <div className={s.chartContainer}>
         {!showElement && (
           <Chart plan={planedPagesPerDay} readingStatistics={[]} />
         )}
-        {isMobile && !showElement && (
-          <button
-            type="button"
-            className={s.addPageBtn}
-            onClick={() => setShowElement(true)}
-          >
-            +
-          </button>
-        )}
-      </Container>
-    </>
+      </div>
+      {isMobile && !showElement && (
+        <button
+          type="button"
+          className={s.addPageBtn}
+          onClick={() => setShowElement(true)}
+        >
+          +
+        </button>
+      )}
+    </Container>
   );
 };
 

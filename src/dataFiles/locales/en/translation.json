@@ -42,6 +42,7 @@
     "confirmPassword": "Confirm password is required",
 
     "bookTitle": "The title of the book is short.",
+    "latinLetters": "Use only Latin letters, please.",
     "titleMax": "The title is too long.",
     "titleSpace": "Cannot start with a space and hyphen",
     "enterTitle": "Enter the title of the book.",
@@ -59,6 +60,7 @@
     "pagesMin": "The number of pages is more than 1.",
     "pagesMax": "The number of pages is less than 4.",
     "pagesFill": "Fill in the number of pages.",
+    "yearFill": "Fill in the date.",
     "pagesError": "Enter the number of pages from 1 to 4.",
     "pagesMin1": "May not be less then 1",
     "pagesMore": "More then the pages in training",
@@ -81,7 +83,8 @@
     "rating": "Rating",
     "resume": "Resume",
     "choose": "Choose rating of the book",
-    "save": "Save"
+    "save": "Save",
+    "myTraining": "My training"
   },
 
   "training": {
@@ -116,7 +119,10 @@
   },
 
   "toast": {
-    "regSuccess": "Registration was successful"
+    "regSuccess": "Registration was successful",
+    "addBook": "Your book ",
+    "addBookSuccess": " has been successfully added",
+    "bookWarning": "You have already added book with title - "
   },
 
   "modal": {

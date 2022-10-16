@@ -1,11 +1,29 @@
+.container {
+  padding-bottom: 100px;
+}
+
 .training {
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-top: 20px;
+  padding: 20px 20px 0 20px;
+}
+@media screen and (max-width: 479px) {
+  .chartContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 20px 0 20px;
+  }
 }
 
+@media screen and (min-width: 480px) {
+  .training {
+    width: 440px;
+  }
+}
 .addPageBtn {
   position: absolute;
   display: inline-block;
@@ -31,22 +49,34 @@
 @media screen and (min-width: 1280px) {
   .training {
     flex-direction: row-reverse;
+    padding: 0;
+    width: 1248px;
+    margin-top: 40px;
+  }
+  .buttonWrapper > button {
+    width: 200px;
+    height: 40px;
   }
 }
+
 .wrapperContainer {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  padding-bottom: 40px;
 }
 .buttonWrapper {
   display: flex;
   margin-top: 32px;
+  margin-bottom: 32px;
   justify-content: center;
 }
 @media screen and (min-width: 768px) {
+  .container {
+    padding: 0 0 40px;
+  }
   .wrapperContainer {
-    padding-bottom: 60px;
+    padding: 0;
+    padding-bottom: 40px;
   }
   .trainingBookList {
     display: grid;
@@ -54,12 +84,18 @@
   }
   .training {
     padding-top: 32px;
+    padding-left: 0;
+    padding-right: 0;
   }
   .buttonWrapper {
     margin-top: 40px;
+    margin-bottom: 40px;
   }
 }
 @media screen and (min-width: 1280px) {
+  .container {
+    padding-top: 40px;
+  }
   .wrapperContainer {
     margin-right: 32px;
     justify-content: space-between;

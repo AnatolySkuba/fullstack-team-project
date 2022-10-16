@@ -47,8 +47,6 @@
   margin-top: 15px;
 }
 .titleTextarea {
-  font-size: 14px;
-  line-height: 17px;
   border-radius: 0;
   margin-top: 20px;
   margin-bottom: 3px;
@@ -60,7 +58,7 @@
 .buttonOpen {
   padding-top: 11px;
   padding-bottom: 11px;
-
+  cursor: pointer;
   text-align: center;
   width: 127px;
   height: 40px;
@@ -81,6 +79,7 @@
 }
 
 .buttonBack {
+  cursor: pointer;
   min-width: 98px;
   padding-top: 11px;
   padding-bottom: 11px;
@@ -93,6 +92,7 @@
 }
 
 .buttonSave {
+  cursor: pointer;
   min-width: 98px;
   padding-top: 11px;
   padding-bottom: 11px;

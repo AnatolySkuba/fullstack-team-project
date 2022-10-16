@@ -1,8 +1,9 @@
-import s from './BooksReader.module.css';
 import { useTranslation } from 'react-i18next';
+import s from './BooksReader.module.css';
 
 const BooksReader = () => {
   const { t } = useTranslation();
+
   return (
     <div className={s.wrapper}>
       <h1 className={s.title}>Books Reading</h1>

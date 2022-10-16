@@ -1,11 +1,13 @@
 import React from 'react';
 import { Field, Form, Formik, ErrorMessage } from 'formik';
-import s from './InputBook.module.css';
 import schema from './ErrorInput';
-import PropTypes from 'prop-types';
 import { useCreateBookMutation } from 'redux/books/booksApi';
 import { useTranslation } from 'react-i18next';
 import { toast } from 'react-toastify';
+import { useSelector } from 'react-redux';
+import { getLang } from 'redux/authUser/authUserSlice';
+import PropTypes from 'prop-types';
+import s from './InputBook.module.css';
 
 const initialValues = {
   title: '',
@@ -15,12 +17,16 @@ const initialValues = {
 };
 
 function InputBook({ addedBookTitles }) {
+  const currentLang = useSelector(getLang);
   const { t } = useTranslation();
   const [createBook] = useCreateBookMutation();
 
   return (
     <>
-      <Formik initialValues={initialValues} validationSchema={schema(t)}>
+      <Formik
+        initialValues={initialValues}
+        validationSchema={schema(t, currentLang)}
+      >
         {({ values, handleChange, handleBlur, resetForm, isValid }) => (
           <Form
             className={s.form}
@@ -28,9 +34,7 @@ function InputBook({ addedBookTitles }) {
             onSubmit={e => {
               e.preventDefault();
               if (addedBookTitles.includes(values.title)) {
-                toast.warning(
-                  `You have already added book with title - ${values.title}`
-                );
+                toast.warning(`${t('toast.bookWarning')}${values.title}`);
                 return;
               }
               createBook({
@@ -39,6 +43,11 @@ function InputBook({ addedBookTitles }) {
                 publicationDate: values.publishYear,
                 amountOfPages: values.pagesTotal,
               });
+              toast.success(
+                `${t('toast.addBook')}${values.title}${t(
+                  'toast.addBookSuccess'
+                )}`
+              );
               resetForm();
             }}
           >
@@ -96,6 +105,7 @@ function InputBook({ addedBookTitles }) {
                   onBlur={handleBlur}
                   placeholder="..."
                   value={values.publishYear}
+                  required
                 />
                 <ErrorMessage
                   component="div"
