@@ -33,7 +33,7 @@ function InputBook({ addedBookTitles }) {
             action="submit"
             onSubmit={e => {
               e.preventDefault();
-              if (addedBookTitles.includes(values.title)) {
+              if (addedBookTitles?.includes(values.title)) {
                 toast.warning(`${t('toast.bookWarning')}${values.title}`);
                 return;
               }

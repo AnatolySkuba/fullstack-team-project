@@ -42,9 +42,8 @@ const LibraryView = () => {
           onClick={() => setShowElement(false)}
         />
       )}
-      {(!isMobile || showElement) && (
-        <InputBook addedBookTitles={data?.map(book => book.bookTitle)} />
-      )}
+
+      <InputBook addedBookTitles={data?.map(book => book.bookTitle)} />
 
       {!data?.length && !isLoading && <StartModal />}
 
