@@ -106,7 +106,7 @@ const LoginForm = () => {
     <div className={s.container}>
       <a
         className={s.googleLink}
-        href="https://fullstack-team-project-back.herokuapp.com/auth/google"
+        href="https://fullstack-team-project-back.onrender.com/auth/google"
       >
         <GoogleIcon style={{ marginRight: '15px' }} />
         Google
